@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 # ====== LOAD MODELS ON STARTUP ======
 models = {
     "letters": load_model("models/FSL_Letters_model.keras"),
-    "numbers": load_model("models/FSL_Numbers_model.keras"),
+    "numbers": load_model("models/FSL_Numbers_Model.keras"),
     "ordinal": load_model("models/FSL_Ordinal_model.keras"),
     "time": load_model("models/FSL_Time_model.keras"),
  
