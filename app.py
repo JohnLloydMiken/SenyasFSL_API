@@ -10,7 +10,7 @@ models = {
     "numbers": load_model("models/FSL_Numbers_Model.keras"),
     "ordinal": load_model("models/FSL_Ordinal_model.keras"),
     "time": load_model("models/FSL_Time_model.keras"),
- 
+
 }
 
 label_sets = {
@@ -22,11 +22,11 @@ label_sets = {
     "numbers": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",],
     "ordinal": ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", ],
     "time": [
-        '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM', '8PM', '9PM', '10PM', '11PM', '12PM', '6AM', "7AM", "8AM", "9AM", "10AM", "11AM",
-        'after_noon', 'before', 'evening', 'later', 'morning', 'next_week', 'night', 'noon', 'past',
-        'recent', 'tomorrow', 'yesterday'
+        "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM", "12PM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM",
+        "after_noon", "before", "evening", "later", "morning", "next_week", "night", "noon", "past",
+        "recent", "tomorrow", "yesterday"
     ],
-   
+
 }
 
 hand_type = {
