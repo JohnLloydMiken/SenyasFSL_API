@@ -9,7 +9,6 @@ models = {
     "letters": load_model("models/FSL_Letters_model.keras"),
     "numbers": load_model("models/FSL_Numbers_Model.keras"),
     "ordinal": load_model("models/FSL_OrdinalNums_Model.keras"),
-    "time": load_model("models/FSL_Time_model.keras"),
     "colors": load_model("models/FSL_Colors_model.keras"),  # 👈 NEW
 }
 
