@@ -33,8 +33,8 @@ label_sets = {
         "6th", "7th", "8th", "9th", "10th"
     ],
     "colors": [
-        "Red", "Orange", "Yellow", "Green", "Blue",
-        "Purple", "Brown", "Black", "White", "Gray", "Pink"
+        "BLACK", "BLUE", "BROWN", "GRAY", "GREEN",
+        "ORANGE", "PINK", "RED", "VIOLET", "WHITE", "YELLOW"
     ],
 }
 
@@ -64,6 +64,8 @@ app.add_middleware(
 # ==========================================
 # 📦 REQUEST SCHEMA
 # ==========================================
+
+
 class LandmarkRequest(BaseModel):
     left_hand: list | None = None
     right_hand: list | None = None
@@ -72,6 +74,8 @@ class LandmarkRequest(BaseModel):
 # ==========================================
 # 🧠 HELPER FUNCTIONS
 # ==========================================
+
+
 def preprocess_input(model_name: str, req: LandmarkRequest):
     """Prepares input array depending on one- or two-hand model type."""
     if hand_type[model_name] == "one":
@@ -80,7 +84,8 @@ def preprocess_input(model_name: str, req: LandmarkRequest):
         seq = np.array(req.right_hand, dtype=np.float32)
     else:
         if req.left_hand is None or req.right_hand is None:
-            raise ValueError("Both left and right hand data required for two-hand model.")
+            raise ValueError(
+                "Both left and right hand data required for two-hand model.")
 
         left = np.array(req.left_hand, dtype=np.float32)
         right = np.array(req.right_hand, dtype=np.float32)
@@ -110,6 +115,8 @@ def predict_sequence(model_name: str, req: LandmarkRequest):
 # ==========================================
 # 🌐 ROUTES
 # ==========================================
+
+
 @app.get("/")
 async def root():
     return {"message": "SenyasFSL API is running successfully!"}
