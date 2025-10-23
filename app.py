@@ -97,23 +97,15 @@ def preprocess_input(model_name: str, req: LandmarkRequest):
 
 
 def predict_sequence(model_name: str, req: LandmarkRequest):
-    """Runs prediction and returns the top label + confidence."""
+    """Runs prediction and returns only the top label (no confidence)."""
     model = models[model_name]
     labels = label_sets[model_name]
     seq = preprocess_input(model_name, req)
 
     prediction = model.predict(seq, verbose=0)[0]
     pred_idx = int(np.argmax(prediction))
-    confidence = float(np.max(prediction))
 
-    # ✅ Confidence threshold for "Unknown"
-    if confidence < 0.7:
-        return {"prediction": "Unknown", "confidence": round(confidence, 4)}
-
-    return {
-        "prediction": labels[pred_idx],
-        "confidence": round(confidence, 4)
-    }
+    return {"prediction": labels[pred_idx]}
 
 # ==========================================
 # 🌐 ROUTES
