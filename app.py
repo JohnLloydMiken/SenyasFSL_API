@@ -23,15 +23,15 @@ label_sets = {
         "K", "L", "M", "N", "O", "P", "Q", "R", "S",
         "T", "U", "V", "W", "X", "Y", "J", "Ñ", "NG", "Z"
     ],
-  "numbers": [
-    "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
-    "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-    "Seventeen", "Eighteen", "Nineteen", "Twenty", "Twenty-One"
-],
+    "numbers": [
+        "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
+        "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+        "Seventeen", "Eighteen", "Nineteen", "Twenty", "Twenty-One"
+    ],
     "ordinals": [
-    "First", "Second", "Third", "Fourth", "Fifth",
-    "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"
-],
+        "First", "Second", "Third", "Fourth", "Fifth",
+        "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"
+    ],
     "colors": [
         "BLACK", "BLUE", "BROWN", "GRAY", "GREEN",
         "ORANGE", "PINK", "RED", "VIOLET", "WHITE", "YELLOW"
@@ -64,8 +64,6 @@ app.add_middleware(
 # ==========================================
 # 📦 REQUEST SCHEMA
 # ==========================================
-
-
 class LandmarkRequest(BaseModel):
     left_hand: list | None = None
     right_hand: list | None = None
@@ -74,8 +72,6 @@ class LandmarkRequest(BaseModel):
 # ==========================================
 # 🧠 HELPER FUNCTIONS
 # ==========================================
-
-
 def preprocess_input(model_name: str, req: LandmarkRequest):
     """Prepares input array depending on one- or two-hand model type."""
     if hand_type[model_name] == "one":
@@ -84,8 +80,7 @@ def preprocess_input(model_name: str, req: LandmarkRequest):
         seq = np.array(req.right_hand, dtype=np.float32)
     else:
         if req.left_hand is None or req.right_hand is None:
-            raise ValueError(
-                "Both left and right hand data required for two-hand model.")
+            raise ValueError("Both left and right hand data required for two-hand model.")
 
         left = np.array(req.left_hand, dtype=np.float32)
         right = np.array(req.right_hand, dtype=np.float32)
@@ -102,21 +97,27 @@ def preprocess_input(model_name: str, req: LandmarkRequest):
 
 
 def predict_sequence(model_name: str, req: LandmarkRequest):
-    """Runs prediction and returns only the top label (no confidence)."""
+    """Runs prediction and returns top label with confidence (2 decimal places)."""
     model = models[model_name]
     labels = label_sets[model_name]
     seq = preprocess_input(model_name, req)
 
+    # Get prediction probabilities
     prediction = model.predict(seq, verbose=0)[0]
-    pred_idx = int(np.argmax(prediction))
 
-    return {"prediction": labels[pred_idx]}
+    # Get index and confidence
+    pred_idx = int(np.argmax(prediction))
+    confidence = float(prediction[pred_idx])
+
+    # Return both label and confidence (2 decimal points)
+    return {
+        "prediction": labels[pred_idx],
+        "confidence": round(confidence * 100, 2)  # percentage format
+    }
 
 # ==========================================
 # 🌐 ROUTES
 # ==========================================
-
-
 @app.get("/")
 async def root():
     return {"message": "SenyasFSL API is running successfully!"}
