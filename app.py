@@ -12,6 +12,9 @@ models = {
     "numbers": load_model("models/FSL_Numbers_Model.keras"),
     "ordinals": load_model("models/FSL_OrdinalNums_Model.keras"),
     "colors": load_model("models/FSL_Colors_model.keras"),
+    "family_relationship": load_model("models/FSL_Family_Relationship_model.keras"),
+    "socialization": load_model("models/FSL_Socialization_model.keras"),
+    
 }
 
 # ==========================================
