@@ -36,6 +36,19 @@ label_sets = {
         "BLACK", "BLUE", "BROWN", "GRAY", "GREEN",
         "ORANGE", "PINK", "RED", "VIOLET", "WHITE", "YELLOW"
     ],
+    "family_relationship": [
+        "AUNT", "BEAUTIFUL", "BOYFRIEND", "BROTHER", "CHILD",
+        "CLASSMATE",  "COUSIN", "CRUSH", "FAMILY",  "FATHER", "FRIEND",
+        "GIRLFRIEND", "GODFATHER", "GODMOTHER",  "GRANDCHILD", "GRANDFATHER",
+        "GRANDMOTHER", "HANDSOME", "HUSBAND", "LIKE", "LOVE", "MOTHER", "NEPHEW",
+        "NIECE", "SISTER", "UNCLE", "WIFE"
+    ],
+    "socialization": [
+        "AGAIN", "BYE", "DEAF", "DON'T KNOW", "DON'T UNDERSTAND", "EXCUSEME", "FILIPINO",
+        "HARDOFHEARING", "HEARING", "HELLO", "HOW", "KNOW", "LANGUAGE", "NO", "OK",
+        "PLEASE", "READY", "SIGN", "SORRY", "STOP", "UNDERSTAND", "WAIT", "WHAT",
+        "WHEN", "WHERE", "WHO", "WHY", "YES"
+    ]
 }
 
 # ==========================================
@@ -45,7 +58,10 @@ hand_type = {
     "letters": "one",
     "numbers": "one",
     "ordinals": "one",
-    "colors": "two",  # ✅ two-hand model (FSL Colors trained with both hands)
+    # ✅ two-hand model (FSL Colors trained with both hands)
+    "colors": "two",
+    "family_relationship": "two",
+    "socialization": "two"
 }
 
 # ==========================================
@@ -64,6 +80,8 @@ app.add_middleware(
 # ==========================================
 # 📦 REQUEST SCHEMA
 # ==========================================
+
+
 class LandmarkRequest(BaseModel):
     left_hand: list | None = None
     right_hand: list | None = None
@@ -72,6 +90,8 @@ class LandmarkRequest(BaseModel):
 # ==========================================
 # 🧠 HELPER FUNCTIONS
 # ==========================================
+
+
 def preprocess_input(model_name: str, req: LandmarkRequest):
     """Prepares input array depending on one- or two-hand model type."""
     if hand_type[model_name] == "one":
@@ -80,7 +100,8 @@ def preprocess_input(model_name: str, req: LandmarkRequest):
         seq = np.array(req.right_hand, dtype=np.float32)
     else:
         if req.left_hand is None or req.right_hand is None:
-            raise ValueError("Both left and right hand data required for two-hand model.")
+            raise ValueError(
+                "Both left and right hand data required for two-hand model.")
 
         left = np.array(req.left_hand, dtype=np.float32)
         right = np.array(req.right_hand, dtype=np.float32)
@@ -118,6 +139,8 @@ def predict_sequence(model_name: str, req: LandmarkRequest):
 # ==========================================
 # 🌐 ROUTES
 # ==========================================
+
+
 @app.get("/")
 async def root():
     return {"message": "SenyasFSL API is running successfully!"}
