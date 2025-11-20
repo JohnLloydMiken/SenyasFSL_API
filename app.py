@@ -12,6 +12,11 @@ models = {
     "numbers": load_model("models/FSL_Numbers_Model.keras"),
     "ordinals": load_model("models/FSL_OrdinalNums_Model.keras"),
     "colors": load_model("models/FSL_Colors_model.keras"),
+    "family_relationship": load_model("models/FSL_Family_Relationship_model.keras"),
+    "socialization": load_model("models/FSL_Socialization_model.keras"),
+    "timeExpression_daysOfWeeks": load_model("models/FSL_TimeExpression_DaysOfWeek_model.keras"),
+    "timeExpression_months": load_model("models/FSL_TimeExpression_Months_model.keras"),
+
 }
 
 # ==========================================
@@ -48,6 +53,21 @@ label_sets = {
         "HARDOFHEARING", "HEARING", "HELLO", "HOW", "KNOW", "LANGUAGE", "NO", "OK",
         "PLEASE", "READY", "SIGN", "SORRY", "STOP", "UNDERSTAND", "WAIT", "WHAT",
         "WHEN", "WHERE", "WHO", "WHY", "YES"
+    ],
+    "timeExpression_daysOfWeeks": [
+        "EARLY", "FRIDAY", "HOUR", "LAST", "LATE",
+        "MINUTES", "MONDAY", "NEVER", "ONCE", "RECENT",
+        "SATURDAY", "SECONDS", "SEE YOU", "SOMETIME", "SOON",
+        "SUNDAY", "THURSDAY", "TODAY", "TUESDAY", "TWICE",
+        "WEDNESDAY", "WEEK"
+    ],
+    "timeExpression_months":
+    [
+        "APRIL", "AUGUST", "BEFORE", "CALENDAR", "DECEMBER",
+        "EVENING", "FEBRAURY", "JANUARY", "JULY", "JUNE",
+        "LATER", "MARCH", "MAY", "MONTHS", "MORNING",
+        "NEXT WEEK", "NIGHT", "NOON", "NOVEMBER", "OCTOBER",
+        "PAST", "SEPTEMBER", "TOMORROW", "YEAR", "YESTERDAY"
     ]
 }
 
@@ -61,7 +81,9 @@ hand_type = {
     # ✅ two-hand model (FSL Colors trained with both hands)
     "colors": "two",
     "family_relationship": "two",
-    "socialization": "two"
+    "socialization": "two",
+    "timeExpression_daysOfWeeks": "two",
+    "timeExpression_months": "two"
 }
 
 # ==========================================
