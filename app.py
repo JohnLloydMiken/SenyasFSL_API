@@ -49,7 +49,7 @@ label_sets = {
     ],
     "socialization": [
         "Again", "Bye", "Deaf", "Don't know", "Don't understand", "Excuseme", "Filipino",
-        "Hard of hearing", "Hearing", "Hello", "How", "Know", "Language", "No", "Ok",
+        "Hard of hearing", "Hearing", "Hello", "How", "Know", "Language", "No", "Okay",
         "Please", "Ready", "Sign", "Sorry", "Stop", "Understand", "Wait", "What",
         "When", "Where", "Who", "Why", "Yes"
     ],
@@ -68,17 +68,17 @@ label_sets = {
         "Past", "September", "Tomorrow", "Year", "Yesterday"
     ],
     "time_weather": [
-        "10am", "10pm", "11am", "11pm", "12am",
-        "12pm", "1pm", "2pm", "3pm", "4pm",
-        "5pm", "6am", "6pm", "7am", "7pm",
-        "8am", "8pm", "9am", "9pm",
+        "10:00 AM", "10:00 PM", "11: 00 AM", "11:00 PM", "12:00 AM",
+        "12:00 PM", "1:00 PMm", "2:00 PM", "3:00 PM", "4:00 PM",
+        "5:00 PM", "6:00 AM", "6:00 PM", "7:00 AM", "7:00 PM",
+        "8:00 AM", "8:00 PM", "9:00 AM", "9:00 PM",
         "Bright", "Clear sky", "Cloud", "Cold",
         "Fog", "Hot", "Rainbow", "Rainy",
         "Smog", "Sun", "Warm", "Wet"
     ],
     "colors_house": [
         "Apartment", "Balcony", "Bedroom", "Black", "Blue",
-        "Brown", "Closet", "Cr", "Dining area", "First floor",
+        "Brown", "Closet", "Comfort Room", "Dining area", "First floor",
         "Garage", "Gray", "Green", "Hallway", "House",
         "Kitchen area", "Living room", "Nipa hut", "Orange", "Pink",
         "Red", "Room", "Second floor", "Storage room", "Third floor",
