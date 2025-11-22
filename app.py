@@ -105,7 +105,7 @@ label_sets = {
 }
 
 # ==========================================
-# ✋ HAND TYPE PER MODEL
+# ✋ HAND TYPE PER MODELs
 # ==========================================
 hand_type = {
     "letters": "one",
