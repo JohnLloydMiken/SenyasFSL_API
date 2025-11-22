@@ -106,7 +106,9 @@ hand_type = {
     "socialization": "two",
     "timeExpression_daysOfWeeks": "two",
     "timeExpression_months": "two",
-   
+    "time_weather": "two",
+    "colors_house": "two",
+
 }
 
 # ==========================================
