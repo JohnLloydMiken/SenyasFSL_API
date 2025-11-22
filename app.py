@@ -17,6 +17,8 @@ models = {
     "timeExpression_months": load_model("models/FSL_TimeExpression_Months_model.keras"),
     "time_weather": load_model("models/FSL_Time_Weather_model.keras"),
     "colors_house": load_model("models/FSL_Colors_House_model.keras"),
+    "occupation_subjects": load_model("models/FSL_Occupation_Subjects_model.keras"),
+    "places": load_model("models/FSL_Places_model.keras"),
 
 }
 
@@ -108,7 +110,8 @@ hand_type = {
     "timeExpression_months": "two",
     "time_weather": "two",
     "colors_house": "two",
-
+    "occupation_subjects": "two",
+    "places": "two"
 }
 
 # ==========================================
