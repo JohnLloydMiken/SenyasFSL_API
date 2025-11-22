@@ -11,11 +11,14 @@ models = {
     "letters": load_model("models/FSL_Letters_model.keras"),
     "numbers": load_model("models/FSL_Numbers_Model.keras"),
     "ordinals": load_model("models/FSL_OrdinalNums_Model.keras"),
-    "colors": load_model("models/FSL_Colors_model.keras"),
     "family_relationship": load_model("models/FSL_Family_Relationship_model.keras"),
     "socialization": load_model("models/FSL_Socialization_model.keras"),
     "timeExpression_daysOfWeeks": load_model("models/FSL_TimeExpression_DaysOfWeek_model.keras"),
     "timeExpression_months": load_model("models/FSL_TimeExpression_Months_model.keras"),
+    "time_weather": load_model("models/FSL_Time_Weather_model.keras"),
+    "colors_house": load_model("models/FSL_Colors_House_model.keras"),
+    "occupation_subjects": load_model("models/FSL_Occupation_Subjects_model.keras"),
+    "places": load_model("models/FSL_Places_model.keras"),
 
 }
 
@@ -36,10 +39,6 @@ label_sets = {
     "ordinals": [
         "First", "Second", "Third", "Fourth", "Fifth",
         "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"
-    ],
-    "colors": [
-        "BLACK", "BLUE", "BROWN", "GRAY", "GREEN",
-        "ORANGE", "PINK", "RED", "VIOLET", "WHITE", "YELLOW"
     ],
     "family_relationship": [
         "AUNT", "BEAUTIFUL", "BOYFRIEND", "BROTHER", "CHILD",
@@ -68,7 +67,41 @@ label_sets = {
         "LATER", "MARCH", "MAY", "MONTHS", "MORNING",
         "NEXT WEEK", "NIGHT", "NOON", "NOVEMBER", "OCTOBER",
         "PAST", "SEPTEMBER", "TOMORROW", "YEAR", "YESTERDAY"
-    ]
+    ],
+    "time_weather": [
+        "10AM", "10PM", "11AM", "11PM", "12AM",
+        "12PM", "1PM", "2PM", "3PM", "4PM",
+        "5PM", "6AM", "6PM", "7AM", "7PM",
+        "8AM", "8PM", "9AM", "9PM",
+        "BRIGHT", "CLEARSKY", "CLOUD", "COLD",
+        "FOG", "HOT", "RAINBOW", "RAINY",
+        "SMOG", "SUN", "WARM", "WET"
+
+    ],
+    "colors_house": [
+        "APARTMENT", "BALCONY", "BEDROOM", "BLACK", "BLUE",
+        "BROWN", "CLOSET", "CR", "DINING AREA", "FIRST FLOOR",
+        "GARAGE", "GRAY", "GREEN", "HALLWAY", "HOUSE",
+        "KITCHEN AREA", "LIVING ROOM", "NIPA HUT", "ORANGE", "PINK",
+        "RED", "ROOM", "SECOND FLOOR", "STORAGE ROOM", "THIRD FLOOR",
+        "VIOLET", "WHITE", "YELLOW"
+
+    ],
+    "occupation_subjects":
+    [
+        "AralingPanlipunan", "architect", "assignment", "chef", "computer",
+        "doctor", "English", "exam", "Filipino", "hekasi",
+        "makabayan", "math", "occupation", "Philosophy", "photographer",
+        "quiz", "Science", "student", "teacher", "test"
+    ],
+    "places": [
+        "Bakery", "Cementery", "Church", "clinic", "FarmersMarket",
+        "Firestation", "Grocery", "Hospital", "Hotel", "Jail"
+    ],
+
+
+
+
 }
 
 # ==========================================
@@ -79,11 +112,14 @@ hand_type = {
     "numbers": "one",
     "ordinals": "one",
     # ✅ two-hand model (FSL Colors trained with both hands)
-    "colors": "two",
     "family_relationship": "two",
     "socialization": "two",
     "timeExpression_daysOfWeeks": "two",
-    "timeExpression_months": "two"
+    "timeExpression_months": "two",
+    "time_weather": "two",
+    "colors_house": "two",
+    "occupation_subjects": "two",
+    "places": "two"
 }
 
 # ==========================================
