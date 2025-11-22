@@ -15,6 +15,8 @@ models = {
     "socialization": load_model("models/FSL_Socialization_model.keras"),
     "timeExpression_daysOfWeeks": load_model("models/FSL_TimeExpression_DaysOfWeek_model.keras"),
     "timeExpression_months": load_model("models/FSL_TimeExpression_Months_model.keras"),
+    "time_weather": load_model("models/FSL_Time_Weather_model.keras"),
+    "colors_house": load_model("models/FSL_Colors_House_model.keras"),
 
 }
 
@@ -25,50 +27,71 @@ label_sets = {
     "letters": [
         "A", "B", "C", "D", "E", "F", "G", "H", "I",
         "K", "L", "M", "N", "O", "P", "Q", "R", "S",
-        "T", "U", "V", "W", "X", "Y", "J", "Ñ", "NG", "Z"
+        "T", "U", "V", "W", "X", "Y", "J", "Ñ", "Ng", "Z"
     ],
     "numbers": [
         "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
         "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-        "Seventeen", "Eighteen", "Nineteen", "Twenty", "Twenty-One"
+        "Seventeen", "Eighteen", "Nineteen", "Twenty", "Twenty-one"
     ],
     "ordinals": [
         "First", "Second", "Third", "Fourth", "Fifth",
         "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"
     ],
     "family_relationship": [
-        "AUNT", "BEAUTIFUL", "BOYFRIEND", "BROTHER", "CHILD",
-        "CLASSMATE",  "COUSIN", "CRUSH", "FAMILY",  "FATHER", "FRIEND",
-        "GIRLFRIEND", "GODFATHER", "GODMOTHER",  "GRANDCHILD", "GRANDFATHER",
-        "GRANDMOTHER", "HANDSOME", "HUSBAND", "LIKE", "LOVE", "MOTHER", "NEPHEW",
-        "NIECE", "SISTER", "UNCLE", "WIFE"
+        "Aunt", "Beautiful", "Boyfriend", "Brother", "Child",
+        "Classmate", "Cousin", "Crush", "Family", "Father", "Friend",
+        "Girlfriend", "Godfather", "Godmother", "Grandchild", "Grandfather",
+        "Grandmother", "Handsome", "Husband", "Like", "Love", "Mother", "Nephew",
+        "Niece", "Sister", "Uncle", "Wife"
     ],
     "socialization": [
-        "AGAIN", "BYE", "DEAF", "DON'T KNOW", "DON'T UNDERSTAND", "EXCUSEME", "FILIPINO",
-        "HARDOFHEARING", "HEARING", "HELLO", "HOW", "KNOW", "LANGUAGE", "NO", "OK",
-        "PLEASE", "READY", "SIGN", "SORRY", "STOP", "UNDERSTAND", "WAIT", "WHAT",
-        "WHEN", "WHERE", "WHO", "WHY", "YES"
+        "Again", "Bye", "Deaf", "Don't know", "Don't understand", "Excuseme", "Filipino",
+        "Hard of hearing", "Hearing", "Hello", "How", "Know", "Language", "No", "Ok",
+        "Please", "Ready", "Sign", "Sorry", "Stop", "Understand", "Wait", "What",
+        "When", "Where", "Who", "Why", "Yes"
     ],
     "timeExpression_daysOfWeeks": [
-        "EARLY", "FRIDAY", "HOUR", "LAST", "LATE",
-        "MINUTES", "MONDAY", "NEVER", "ONCE", "RECENT",
-        "SATURDAY", "SECONDS", "SEE YOU", "SOMETIME", "SOON",
-        "SUNDAY", "THURSDAY", "TODAY", "TUESDAY", "TWICE",
-        "WEDNESDAY", "WEEK"
+        "Early", "Friday", "Hour", "Last", "Late",
+        "Minutes", "Monday", "Never", "Once", "Recent",
+        "Saturday", "Seconds", "See you", "Sometime", "Soon",
+        "Sunday", "Thursday", "Today", "Tuesday", "Twice",
+        "Wednesday", "Week"
     ],
-    "timeExpression_months":
-    [
-        "APRIL", "AUGUST", "BEFORE", "CALENDAR", "DECEMBER",
-        "EVENING", "FEBRAURY", "JANUARY", "JULY", "JUNE",
-        "LATER", "MARCH", "MAY", "MONTHS", "MORNING",
-        "NEXT WEEK", "NIGHT", "NOON", "NOVEMBER", "OCTOBER",
-        "PAST", "SEPTEMBER", "TOMORROW", "YEAR", "YESTERDAY"
+    "timeExpression_months": [
+        "April", "August", "Before", "Calendar", "December",
+        "Evening", "February", "January", "July", "June",
+        "Later", "March", "May", "Months", "Morning",
+        "Next week", "Night", "Noon", "November", "October",
+        "Past", "September", "Tomorrow", "Year", "Yesterday"
     ],
-   
-
-
-
-
+    "time_weather": [
+        "10am", "10pm", "11am", "11pm", "12am",
+        "12pm", "1pm", "2pm", "3pm", "4pm",
+        "5pm", "6am", "6pm", "7am", "7pm",
+        "8am", "8pm", "9am", "9pm",
+        "Bright", "Clear sky", "Cloud", "Cold",
+        "Fog", "Hot", "Rainbow", "Rainy",
+        "Smog", "Sun", "Warm", "Wet"
+    ],
+    "colors_house": [
+        "Apartment", "Balcony", "Bedroom", "Black", "Blue",
+        "Brown", "Closet", "Cr", "Dining area", "First floor",
+        "Garage", "Gray", "Green", "Hallway", "House",
+        "Kitchen area", "Living room", "Nipa hut", "Orange", "Pink",
+        "Red", "Room", "Second floor", "Storage room", "Third floor",
+        "Violet", "White", "Yellow"
+    ],
+    "occupation_subjects": [
+        "Aralingpanlipunan", "Architect", "Assignment", "Chef", "Computer",
+        "Doctor", "English", "Exam", "Filipino", "Hekasi",
+        "Makabayan", "Math", "Occupation", "Philosophy", "Photographer",
+        "Quiz", "Science", "Student", "Teacher", "Test"
+    ],
+    "places": [
+        "Bakery", "Cementery", "Church", "Clinic", "Farmersmarket",
+        "Firestation", "Grocery", "Hospital", "Hotel", "Jail"
+    ],
 }
 
 # ==========================================
