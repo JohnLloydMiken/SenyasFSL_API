@@ -18,7 +18,7 @@ models = {
     "time_weather": load_model("models/FSL_Time_Weather_model.keras"),
     "colors_house": load_model("models/FSL_Colors_House_model.keras"),
     "occupation_subjects": load_model("models/FSL_Occupation_Subjects_model.keras"),
-    "places": load_model("models/FSL_Places_model.keras"),
+   
 
 }
 
@@ -85,15 +85,14 @@ label_sets = {
         "Violet", "White", "Yellow"
     ],
     "occupation_subjects": [
-        "Aralingpanlipunan", "Architect", "Assignment", "Chef", "Computer",
-        "Doctor", "English", "Exam", "Filipino", "Hekasi",
+        "Araling panlipunan", "Architect", "Assignment", "Bakery", "Cementery",
+        "Chef", "Church", "Clinic", "Computer", "Doctor",
+        "English", "Exam", "Farmers market", "Filipino", "Firestation",
+        "Grocery", "Hekasi", "Hospital", "Hotel", "Jail",
         "Makabayan", "Math", "Occupation", "Philosophy", "Photographer",
         "Quiz", "Science", "Student", "Teacher", "Test"
-    ],
-    "places": [
-        "Bakery", "Cementery", "Church", "Clinic", "Farmersmarket",
-        "Firestation", "Grocery", "Hospital", "Hotel", "Jail"
-    ],
+    ]
+
 }
 
 # ==========================================
@@ -111,7 +110,7 @@ hand_type = {
     "time_weather": "two",
     "colors_house": "two",
     "occupation_subjects": "two",
-    "places": "two"
+
 }
 
 # ==========================================
